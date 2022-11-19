@@ -1,28 +1,12 @@
-# Foobar
+# Stacks and Queues
 
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
+Practice project demonstrating Stacks and Queues.
 
 ## Usage
 
 ```c
-import foobar
+# Declarations for Prototypes
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
 ```
 
 ## Contributing
