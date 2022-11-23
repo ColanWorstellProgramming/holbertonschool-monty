@@ -1,6 +1,6 @@
 #include "monty.h"
 
-char *check2;
+char *check2 = NULL;
 
 /**
  * main - Main Function
@@ -12,9 +12,9 @@ char *check2;
 int main(int argcount, char *argcont[])
 {
 
-FILE *file;
-char *buff;
-char *check;
+FILE *file = NULL;
+char *buff = NULL;
+char *check = NULL;
 size_t size;
 const char del[] = " \t\n";
 unsigned int i;
@@ -33,12 +33,16 @@ if(file == NULL)
 fprintf(stderr, "ERROR: no file");
 exit(EXIT_FAILURE);
 }
-check2 = malloc(sizeof(char *) * 2);
-if (!check2)
+stack = malloc(sizeof(stack_t));
+if (!stack)
 {
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
+
+check = malloc(sizeof(char *) * 4);
+check2 = malloc(sizeof(char *) * 2);
+
 while(getline(&buff, &size, file) != -1)
 {
 
@@ -53,10 +57,13 @@ if (strcmp(op[i].opcode, check) == 0)
 {
 op[i].f(stack, linecount);
 }
+break;
 }
-free(check2);
 }
 
+free(stack);
+free(check);
+free(check2);
 freemem(stack);
 fclose(file);
 return (0);
