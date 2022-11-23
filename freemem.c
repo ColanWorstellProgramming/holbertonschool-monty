@@ -8,12 +8,16 @@
 
 void freemem(stack_t **stack)
 {
-if (stack == NULL || *stack == NULL)
-{
-return;
-}
 
-freemem(&((*stack)->next));
+stack_t *new;
+
+if (*stack)
+{
+while (*stack)
+{
+new = (*stack)->next;
 free(*stack);
-*stack = NULL;
+*stack = new;
+}
+}
 }
