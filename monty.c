@@ -35,7 +35,7 @@ stack_t (*new) = *stack;
 while (new)
 {
 printf("%d", new->n);
-new = new->next;
+new = new->prev;
 }
 (void) i;
 }
