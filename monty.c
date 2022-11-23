@@ -10,8 +10,15 @@ void push(stack_t **stack, unsigned int i)
 {
 
 stack_t *adding;
+int x;
 
-int x = atoi(check2);
+if (check2 == NULL)
+{
+fprintf(stderr, "L%d: usage: push integer\n", i);
+exit(EXIT_FAILURE);
+}
+
+x = atoi(check2);
 
 adding = malloc(sizeof(stack_t));
 
