@@ -40,8 +40,8 @@ fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 
-check = malloc(sizeof(char *) * 4);
-check2 = malloc(sizeof(char *) * 2);
+check = malloc(sizeof(char *));
+check2 = malloc(sizeof(char *));
 
 while(getline(&buff, &size, file) != -1)
 {

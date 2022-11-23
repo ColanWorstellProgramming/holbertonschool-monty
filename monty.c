@@ -9,22 +9,21 @@
 void push(stack_t **stack, unsigned int i)
 {
 
-stack_t (*new) = *stack;
 stack_t *adding = malloc(sizeof(stack_t));
 
 int x = atoi(check2);
 
 adding->n = x;
 adding->prev = NULL;
-adding->next = new;
+adding->next = *stack;
 
 
-if (new)
+if (*stack)
 {
-new->prev = adding;
+(*stack)->prev = adding;
 }
 
-new = adding;
+*stack = adding;
 
 (void) i;
 }
@@ -38,7 +37,7 @@ new = adding;
 void pall(stack_t **stack, unsigned int i)
 {
 
-stack_t (*new) = *stack;
+stack_t *new = *stack;
 
 while (new)
 {
