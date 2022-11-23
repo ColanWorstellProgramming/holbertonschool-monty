@@ -43,6 +43,8 @@ typedef struct instruction_s
  * Prototypes
  */
 
-
+int main(int argcount, char* argcont[]);
+void push(stack_t stack, int i);
+void pall(stack_t stack, int i);
 
 #endif
