@@ -6,7 +6,7 @@
  * Global Var
  */
 
-char *check2;
+extern check checker;
 
 /**
  * Includes
@@ -15,6 +15,19 @@ char *check2;
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+/**
+ * struct check
+ * @check1: var
+ * @check2: var
+ *
+ * Description: token struct
+ */
+typedef struct check
+{
+	char *check1;
+	char *check2;
+} checker;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

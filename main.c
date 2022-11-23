@@ -1,6 +1,6 @@
 #include "monty.h"
 
-char *check2 = NULL;
+checker check;
 
 /**
  * main - Main Function
@@ -14,11 +14,12 @@ int main(int argcount, char *argcont[])
 
 FILE *file = NULL;
 char *buff = NULL;
-char *check = NULL;
 size_t size;
 const char del[] = " \t\n";
 unsigned int i;
 int linecount = 0;
+checker->check1 = NULL;
+checker->check2 = NULL;
 stack_t *stack = NULL;
 instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
 
