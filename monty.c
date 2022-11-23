@@ -9,9 +9,11 @@
 void push(stack_t **stack, unsigned int i)
 {
 
-stack_t *adding = malloc(sizeof(stack_t));
+stack_t *adding;
 
 int x = atoi(check2);
+
+adding = malloc(sizeof(stack_t));
 
 adding->n = x;
 adding->prev = NULL;
@@ -23,7 +25,7 @@ if (*stack)
 (*stack)->prev = adding;
 }
 
-*stack = adding;
+(*stack) = adding;
 
 (void) i;
 }
