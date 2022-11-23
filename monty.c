@@ -15,8 +15,16 @@ stack_t *adding = malloc(sizeof(stack_t));
 int x = atoi(check2);
 
 adding->n = x;
-adding->prev = NULL;
+adding->prev = NULL:
 adding->next = new;
+
+
+if (new)
+{
+new->prev = adding;
+}
+
+new = adding;
 
 (void) i;
 }
@@ -35,7 +43,7 @@ stack_t (*new) = *stack;
 while (new)
 {
 printf("%d", new->n);
-new = new->prev;
+new = new->next;
 }
 (void) i;
 }
