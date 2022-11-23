@@ -32,7 +32,7 @@ new->prev = NULL;
  * Return: void
  */
 
-void add_monty_stack(stack_t **stack, unsigned int i)
+void add(stack_t **stack, unsigned int i)
 {
 stack_t *new;
 
