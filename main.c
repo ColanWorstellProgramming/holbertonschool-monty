@@ -61,7 +61,6 @@ break;
 }
 }
 
-free(stack);
 free(check);
 free(check2);
 freemem(stack);
