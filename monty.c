@@ -10,7 +10,7 @@ void push(stack_t **stack, unsigned int i)
 {
 
 stack_t (*new) = *stack;
-stack_t *adding = malloc(sizeof(struct_t));
+stack_t *adding = malloc(sizeof(stack_t));
 
 int x = atoi(check2);
 
