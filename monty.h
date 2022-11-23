@@ -6,7 +6,7 @@
  * Global Var
  */
 
-extern check checker;
+extern checker;
 
 /**
  * Includes

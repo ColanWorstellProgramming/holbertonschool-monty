@@ -1,6 +1,6 @@
 #include "monty.h"
 
-checker check;
+checker c;
 
 /**
  * main - Main Function
@@ -18,8 +18,8 @@ size_t size;
 const char del[] = " \t\n";
 unsigned int i;
 int linecount = 0;
-checker->check1 = NULL;
-checker->check2 = NULL;
+c->check1 = NULL;
+c->check2 = NULL;
 stack_t *stack = NULL;
 instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
 
@@ -38,8 +38,8 @@ exit(EXIT_FAILURE);
 while(getline(&buff, &size, file) != -1)
 {
 
-check = strtok(buff, del);
-check2 = strtok(NULL, del);
+c->check1 = strtok(buff, del);
+c->check2 = strtok(NULL, del);
 linecount++;
 
 for (i = 0; i < 7; i++)
@@ -53,8 +53,6 @@ continue;
 }
 }
 
-free(check);
-free(check2);
 freemem(&stack);
 fclose(file);
 return (0);
