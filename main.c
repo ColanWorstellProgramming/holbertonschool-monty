@@ -54,6 +54,7 @@ if (strcmp(op[i].opcode, check) == 0)
 op[i].f(stack, linecount);
 }
 }
+free(check2);
 }
 
 freemem(stack);
