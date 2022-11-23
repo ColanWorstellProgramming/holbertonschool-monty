@@ -1,5 +1,7 @@
 #include "monty.h"
 
+char *check2;
+
 /**
  * main - Main Function
  * @argcount: how many args
@@ -41,7 +43,7 @@ while(getline(&buff, &size, file) != -1)
 {
 
 check = strtok(buff, del);
-
+check2 = strtok(NULL, del);
 linecount++;
 
 }

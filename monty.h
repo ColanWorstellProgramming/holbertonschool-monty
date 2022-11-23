@@ -3,6 +3,12 @@
 #undef montyh
 
 /**
+ * Global Var
+ */
+
+char *check2;
+
+/**
  * Includes
  */
 
