@@ -17,7 +17,7 @@ while (*stack)
 {
 new = (*stack)->next;
 free(*stack);
-*stack = new;
+(*stack) = new;
 }
 }
 }
