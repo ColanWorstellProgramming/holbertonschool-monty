@@ -10,13 +10,13 @@ void push(stack_t **stack, unsigned int i)
 {
 
 stack_t (*new) = *stack;
-stack_t *adding = NULL;
+stack_t *adding = malloc(sizeof(struct_t));
 
 int x = atoi(check2);
 
 adding->n = x;
-adding->prev = new;
-adding->next = NULL;
+adding->prev = NULL;
+adding->next = new;
 
 (void) i;
 }
