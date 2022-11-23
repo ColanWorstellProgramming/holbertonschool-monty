@@ -4,7 +4,7 @@
  * 
  */
 
-void push(stack_t stack, int i)
+void push(stack_t **stack, unsigned int i)
 {
 
 int val = atoi(i);
@@ -15,25 +15,21 @@ fprintf(stderr, "L<%d>: usage: push integer\n", __LINE__);
 exit(EXIT_FAILURE);
 }
 
-
-
 }
 
 /**
  *
  */
 
-void pall(stack_t stack, int i)
+void pall(stack_t **stack, unsigned int i)
 {
 
-int val = atoi(i);
+stack_t (*new) = *stack;
 
-if (val = 0 || i == NULL)
+while (new)
 {
-fprintf(stderr, "l<%d>: usage: pall integer\n", __LINE__);
-exit(EXIT_FAILURE);
+printf("%d", new->n);
+new = new->next;
 }
-
-
-
+(void) i;
 }

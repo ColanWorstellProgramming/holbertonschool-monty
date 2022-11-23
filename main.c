@@ -10,14 +10,14 @@
 int main(int argcount, char *argcont[])
 {
 
-FILE file;
-char *buffer, *buff, *spaced;
-char check[4];
+FILE *file;
+char *buffer, *buff;
+char *check;
 size_t size;
 const char del[] = " \t\n";
-int count = 0;
+unsigned int i;
 int linecount = 0;
-stack_t stack;
+stack_t **stack = NULL;
 instruction_t op[] = {{"push", push}, {"pall", pall}};
 
 if (argcount != 2)
@@ -25,7 +25,7 @@ if (argcount != 2)
 fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
-file = fopen(argcont[1], r);
+file = fopen(argcont[1], "r");
 if(file == NULL)
 {
 fprintf(stderr, "ERROR: no file");
@@ -40,30 +40,21 @@ exit(EXIT_FAILURE);
 while(getline(&buff, &size, file) != -1)
 {
 
-spaced = strtok(buff, del);
-
-check[count] = spaced;
+check = strtok(buff, del);
 
 linecount++;
 
-while (spaced != null && count < 3)
-{
-spaced = strtok(NULL, del);
-count++;
-check[count] = spaced;
 }
 
 for (i = 0; i < 2; i++)
 {
 
-if (strcmp(op.opcode, check) == 0)
+if (strcmp(op[i].opcode, check) == 0)
 {
 op[i].f(stack, linecount);
 }
 }
-}
 
 fclose(file);
-
 return (0);
 }
