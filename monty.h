@@ -3,10 +3,9 @@
 #undef montyh
 
 /**
- * Global Var
+ * Global
  */
-
-extern checker;
+struct checker;
 
 /**
  * Includes
