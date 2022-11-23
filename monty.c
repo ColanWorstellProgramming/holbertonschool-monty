@@ -15,6 +15,7 @@ int x;
 if (check2 == NULL)
 {
 fprintf(stderr, "L%d: usage: push integer\n", i);
+freemem(*stack);
 exit(EXIT_FAILURE);
 }
 
