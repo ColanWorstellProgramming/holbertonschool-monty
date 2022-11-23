@@ -13,7 +13,7 @@ int main(int argcount, char *argcont[])
 {
 
 FILE *file;
-char *buffer, *buff;
+char *buff;
 char *check;
 size_t size;
 const char del[] = " \t\n";
@@ -33,10 +33,10 @@ if(file == NULL)
 fprintf(stderr, "ERROR: no file");
 exit(EXIT_FAILURE);
 }
-buffer = malloc(sizeof(char) * 2);
-if (buffer == NULL)
+check2 = malloc(sizeof(char *) * 2);
+if (!check2)
 {
-fprintf(stderr, "ERROR: memory failure");
+fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 while(getline(&buff, &size, file) != -1)
@@ -54,9 +54,11 @@ for (i = 0; i < 7; i++)
 if (strcmp(op[i].opcode, check) == 0)
 {
 op[i].f(stack, linecount);
+free(check2);
 }
 }
 
+free(check2);
 freemem(stack);
 fclose(file);
 return (0);
