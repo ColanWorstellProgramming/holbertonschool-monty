@@ -15,7 +15,7 @@ stack_t *adding = malloc(sizeof(stack_t));
 int x = atoi(check2);
 
 adding->n = x;
-adding->prev = NULL:
+adding->prev = NULL;
 adding->next = new;
 
 
