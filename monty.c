@@ -42,7 +42,7 @@ stack_t (*new) = *stack;
 
 while (new)
 {
-printf("%d", new->n);
+printf("%d\n", new->n);
 new = new->next;
 }
 (void) i;
