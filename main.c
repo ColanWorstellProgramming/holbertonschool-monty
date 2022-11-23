@@ -55,12 +55,6 @@ if (strcmp(op[i].opcode, check) == 0)
 {
 op[i].f(stack, linecount);
 }
-else
-{
-fprintf(stderr, "L%d: unknown instruction %s\n", i, check);
-freemem(stack);
-exit(EXIT_FAILURE);
-}
 }
 
 freemem(stack);
