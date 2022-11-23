@@ -20,7 +20,7 @@ const char del[] = " \t\n";
 unsigned int i;
 int linecount = 0;
 stack_t **stack = NULL;
-instruction_t op[] = {{"push", push}, {"pall", pall}};
+instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
 
 if (argcount != 2)
 {
@@ -48,12 +48,18 @@ linecount++;
 
 }
 
-for (i = 0; i < 2; i++)
+for (i = 0; i < 7; i++)
 {
 
 if (strcmp(op[i].opcode, check) == 0)
 {
 op[i].f(stack, linecount);
+}
+else
+{
+fprintf(stderr, "L%d: unknown instruction %s\n", i, check);
+freemem(stack);
+exit(EXIT_FAILURE);
 }
 }
 

@@ -55,7 +55,7 @@ void push(stack_t **stack, unsigned int i);
 void pall(stack_t **stack, unsigned int i);
 void pint(stack_t **stack, unsigned int i);
 void pop(stack_t **stack, unsigned int i);
-void swarp(stack_t **stack, unsigned int i);
+void swap(stack_t **stack, unsigned int i);
 void add(stack_t **stack, unsigned int i);
 void nop(stack_t **stack, unsigned int i);
 void freemem(stack_t **stack);
