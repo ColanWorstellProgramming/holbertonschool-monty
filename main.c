@@ -34,9 +34,6 @@ fprintf(stderr, "ERROR: no file");
 exit(EXIT_FAILURE);
 }
 
-check = malloc(sizeof(char *));
-check2 = malloc(sizeof(char *));
-
 while(getline(&buff, &size, file) != -1)
 {
 
@@ -50,7 +47,7 @@ for (i = 0; i < 7; i++)
 if (strcmp(op[i].opcode, check) == 0)
 {
 op[i].f(&stack, linecount);
-break;
+continue;
 }
 }
 }

@@ -39,10 +39,12 @@ if (*stack)
 void pall(stack_t **stack, unsigned int i)
 {
 
-while (*stack)
+stack_t *temp = *stack;
+
+while (temp)
 {
-printf("%d\n", (*stack)->n);
-*stack = (*stack)->next;
+printf("%d\n", temp->n);
+temp = temp->next;
 }
 (void) i;
 }
