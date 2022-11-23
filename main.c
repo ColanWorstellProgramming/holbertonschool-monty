@@ -57,7 +57,6 @@ op[i].f(stack, linecount);
 }
 }
 
-freemem(stack);
 fclose(file);
 return (0);
 }
