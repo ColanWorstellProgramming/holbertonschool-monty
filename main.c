@@ -36,7 +36,7 @@ exit(EXIT_FAILURE);
 file = fopen(argcont[1], "r");
 if(file == NULL)
 {
-fprintf(stderr, "ERROR: no file");
+fprintf(stderr, "ERROR: no file\n");
 exit(EXIT_FAILURE);
 }
 
@@ -55,6 +55,9 @@ op[i].f(&stack, linecount);
 continue;
 }
 }
+fprintf(stderr, "L%d: unknown instruction %s\n", linecount, c->check1);
+freemem(&stack);
+exit(EXIT_FAILURE);
 }
 
 freemem(&stack);

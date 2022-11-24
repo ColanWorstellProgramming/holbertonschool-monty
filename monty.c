@@ -75,6 +75,7 @@ void pint(stack_t **stack, unsigned int i)
 if ((*stack) == NULL)
 {
 fprintf(stderr, "L%d: can't pint, stack empty\n", i);
+freemem(stack);
 exit(EXIT_FAILURE);
 }
 else
@@ -96,6 +97,7 @@ stack_t *new;
 if (!(*stack))
 {
 fprintf(stderr, "L%d: can't pop an empty stack\n", i);
+freemem(stack);
 exit(EXIT_FAILURE);
 }
 else
