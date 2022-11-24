@@ -16,13 +16,15 @@ checker *c;
 int main(int argcount, char *argcont[])
 {
 
-char *buff = NULL;
+char *buff;
 size_t size;
 const char del[] = " \t\n";
 int linecount = 0;
 stack_t *stack = NULL;
 
 c = malloc(sizeof(checker));
+buff = malloc(sizeof(char *));
+
 c->file = NULL;
 
 if (argcount != 2)
@@ -49,7 +51,8 @@ linecount++;
 other(linecount, c->check1, &stack);
 }
 
-freemem(&stack);
+free(buff);
 fclose(c->file);
+freemem(&stack);
 return (0);
 }

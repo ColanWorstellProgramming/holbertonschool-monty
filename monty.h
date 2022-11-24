@@ -22,7 +22,6 @@ typedef struct checker
 	char *check1;
 	char *check2;
 	FILE *file;
-	char *buff;
 } checker;
 
 extern checker *c;
