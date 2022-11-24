@@ -16,7 +16,6 @@ checker *c;
 int main(int argcount, char *argcont[])
 {
 
-FILE *file = NULL;
 char *buff = NULL;
 size_t size;
 const char del[] = " \t\n";
@@ -24,20 +23,23 @@ int linecount = 0;
 stack_t *stack = NULL;
 
 c = malloc(sizeof(checker));
+c->file = NULL;
 
 if (argcount != 2)
 {
 fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
-file = fopen(argcont[1], "r");
-if(file == NULL)
+c->file = fopen(argcont[1], "r");
+if(c->file == NULL)
 {
 fprintf(stderr, "Error: Can't open file %s\n", argcont[1]);
+fclose(c->file);
+free(c->file);
 exit(EXIT_FAILURE);
 }
 
-while(getline(&buff, &size, file) != -1)
+while(getline(&buff, &size, c->file) != -1)
 {
 
 c->check1 = strtok(buff, del);
@@ -45,10 +47,9 @@ c->check2 = strtok(NULL, del);
 linecount++;
 
 other(linecount, c->check1, &stack);
-
 }
 
 freemem(&stack);
-fclose(file);
+fclose(c->file);
 return (0);
 }

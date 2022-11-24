@@ -19,6 +19,12 @@ instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", po
 
 for (i = 0; i < 7; i++)
 {
+
+if (strstr(ch, "push"))
+{
+printf("pushit");
+}
+
 if (strcmp(op[i].opcode, ch) == 0)
 {
 op[i].f(stack, linecount);
