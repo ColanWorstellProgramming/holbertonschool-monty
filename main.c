@@ -55,5 +55,6 @@ free(buff);
 fclose(c->file);
 free(c);
 freemem(&stack);
+printf("0\n");
 return (0);
 }
