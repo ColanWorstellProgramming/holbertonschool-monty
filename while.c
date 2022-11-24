@@ -13,25 +13,40 @@ checker *c;
 
 void other(unsigned int linecount, char *ch, stack_t **stack)
 {
-unsigned int i;
 
 instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
 
-for (i = 0; i < 7; i++)
+if (strstr("push", ch))
 {
-
-if (strstr(ch, "push"))
-{
-printf("pushit");
+op[0].f(stack, linecount);
 }
-
-if (strcmp(op[i].opcode, ch) == 0)
+else if (strstr("pall", ch))
 {
-op[i].f(stack, linecount);
+op[1].f(stack, linecount);
+}
+else if (strstr("pint", ch))
+{
+op[2].f(stack, linecount);
+}
+else if (strstr("pop", ch))
+{
+op[3].f(stack, linecount);
+}
+else if (strstr("swap", ch))
+{
+op[4].f(stack, linecount);
+}
+else if (strstr("add", ch))
+{
+op[5].f(stack, linecount);
+}
+else if (strstr("nop", ch))
+{
+op[6].f(stack, linecount);
+}
+else
+{
+fprintf(stderr, "L%d: unknown instruction %s\n", linecount, ch);
 return;
 }
-}
-fprintf(stderr, "L%d: unknown instruction %s\n", linecount, ch);
-freemem(stack);
-exit(EXIT_FAILURE);
 }
