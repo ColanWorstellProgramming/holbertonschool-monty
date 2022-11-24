@@ -33,7 +33,7 @@ exit(EXIT_FAILURE);
 file = fopen(argcont[1], "r");
 if(file == NULL)
 {
-fprintf(stderr, "ERROR: no file\n");
+fprintf(stderr, "Error: Can't open file %s\n", argcont[1]);
 exit(EXIT_FAILURE);
 }
 

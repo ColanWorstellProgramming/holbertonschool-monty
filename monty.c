@@ -18,6 +18,7 @@ void push(stack_t **stack, unsigned int i)
 stack_t *adding;
 int x;
 
+
 if (c->check2 == NULL)
 {
 fprintf(stderr, "L%d: usage: push integer\n", i);
