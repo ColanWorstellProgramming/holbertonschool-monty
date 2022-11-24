@@ -47,17 +47,8 @@ c->check1 = strtok(buff, del);
 c->check2 = strtok(NULL, del);
 linecount++;
 
-for (i = 0; i < 7; i++)
-{
-if (strcmp(op[i].opcode, c->check1) == 0)
-{
-op[i].f(&stack, linecount);
-continue;
-}
-}
-fprintf(stderr, "L%d: unknown instruction %s\n", linecount, c->check1);
-freemem(&stack);
-exit(EXIT_FAILURE);
+other(op, linecount, c->check1, &stack);
+
 }
 
 freemem(&stack);
