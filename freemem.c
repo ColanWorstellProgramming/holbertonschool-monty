@@ -1,5 +1,7 @@
 #include "monty.h"
 
+checker *c;
+
 /**
  * freemem - free mem
  * @stack: stack
