@@ -24,8 +24,9 @@ unsigned int i;
 int linecount = 0;
 stack_t *stack = NULL;
 
-
 instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
+
+c = malloc(sizeof(checker));
 
 if (argcount != 2)
 {
@@ -48,7 +49,7 @@ linecount++;
 
 for (i = 0; i < 7; i++)
 {
-if (strcmp(op[i].opcode, c->check1 == 0))
+if (strcmp(op[i].opcode, c->check1) == 0)
 {
 op[i].f(&stack, linecount);
 continue;

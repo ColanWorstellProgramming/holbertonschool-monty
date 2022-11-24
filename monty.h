@@ -3,11 +3,6 @@
 #undef montyh
 
 /**
- * Global
- */
-struct checker;
-
-/**
  * Includes
  */
 
@@ -22,11 +17,13 @@ struct checker;
  *
  * Description: token struct
  */
-typedef struct check
+typedef struct checker
 {
 	char *check1;
 	char *check2;
 } checker;
+
+extern checker *c;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
