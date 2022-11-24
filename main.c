@@ -20,11 +20,8 @@ FILE *file = NULL;
 char *buff = NULL;
 size_t size;
 const char del[] = " \t\n";
-unsigned int i;
 int linecount = 0;
 stack_t *stack = NULL;
-
-instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
 
 c = malloc(sizeof(checker));
 
@@ -47,7 +44,7 @@ c->check1 = strtok(buff, del);
 c->check2 = strtok(NULL, del);
 linecount++;
 
-other(op, linecount, c->check1, &stack);
+other(linecount, c->check1, &stack);
 
 }
 

@@ -68,5 +68,6 @@ void swap(stack_t **stack, unsigned int i);
 void add(stack_t **stack, unsigned int i);
 void nop(stack_t **stack, unsigned int i);
 void freemem(stack_t **stack);
+void other(unsigned int linecount, char *ch, stack_t **stack);
 
 #endif

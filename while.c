@@ -11,8 +11,12 @@ checker *c;
  * Return: void
  */
 
-void other(instruction_t op, unsigned int linecount, char *ch, stack_t **stack)
+void other(unsigned int linecount, char *ch, stack_t **stack)
 {
+unsigned int i;
+
+instruction_t op[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}};
+
 for (i = 0; i < 7; i++)
 {
 if (strcmp(op[i].opcode, ch) == 0)
