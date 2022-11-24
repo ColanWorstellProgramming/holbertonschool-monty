@@ -53,6 +53,7 @@ other(linecount, c->check1, &stack);
 
 free(buff);
 fclose(c->file);
+free(c);
 freemem(&stack);
 return (0);
 }
