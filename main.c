@@ -49,7 +49,6 @@ c->check2 = strtok(NULL, del);
 linecount++;
 
 other(linecount, c->check1, &stack);
-return (1);
 }
 
 free(buff);
